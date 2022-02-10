@@ -1,0 +1,78 @@
+.profile-head {
+  transform: translateY(5rem)
+}
+
+.cover {
+   background-image: url(https://i.pinimg.com/original/59/35/5f/59355f751c1e3698cc6360b1a7390094.jpg);
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+body {
+  background: #654ea3;
+  background: linear-gradient(to right, #e96443, #904e95);
+  min-height: 100vh
+}
+.button {
+background-color: #04AA6D;
+border: none;
+color: white;
+padding: 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+border-radius: 50%;
+}
+
+.buttons{
+  text-align:center;
+}
+
+.list-inline-item{
+  margin-left: 30px;
+}
+
+
+.profile{
+  margin-top: 100px;
+  
+}
+
+.profile-photo{
+  border-radius: 50%;
+  margin-top: 100px;
+  
+}
+
+.description{
+  margin-top: 15px;
+  margin-left: 20%;
+}
+
+.data-list{
+  margin: auto;
+
+  align-content: center;
+}
+
+.action-buttons{
+  position: absolute;
+  right: 20%;
+}
+
+.a-btn{
+  background-color: #666; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button3 {border-radius: 8px;}
+
+.button5 {border-radius: 50%;}

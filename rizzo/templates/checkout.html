@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %} 
+        <div id="wrapper" class="flex flex-col justify-between " style="background-color:#aaa;">
+
+            <div class="lg:p-12 max-w-xl lg:my-0 my-12 mx-auto p-6 space-y-">
+                <form class="lg:p-10 p-6 space-y-3 relative bg-white shadow-xl rounded-md">
+                    <h1 class="lg:text-2xl text-xl font-semibold mb-6">Está quase lá para você ter seu vídeo de {{service.famous.name}} {{service.famous.last_name}}!</h1>
+
+                    <div class="grid lg:grid-cols-1 gap-3" >
+                        <div>
+                            <label class="mb-0"> Nome </label>
+                            <input type="text" placeholder="Nome" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                        </div>
+                        
+                    </div>
+                    
+                    <div>
+                        <label class="mb-0"> Email </label>
+                        <input type="email" placeholder="ricardo@FanPlace.com" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                    </div>
+                    <div>
+                        <label class="mb-0"> Telefone para contato (opcional) </label>
+                        <input type="text" placeholder="+55 71 99999-9999" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                    </div>
+
+                    <div>
+                            <label for="social">Categoria do pedido</label>
+                            <select name="social" id="social" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                                <option value="aniversario">Aniversário</option>
+                                <option value="casamento">Casamento</option>
+                                <option value="data comemorativa">Data comemorativa</option>
+                                <option value="piada">Piada</option>
+                                <option value="conselho">Conselho</option>
+                                <option value="apoio">Apoio</option>
+                                <option value="outras">Outras</option>
+                            </select>
+                        </div>
+
+                    <div>
+                        <label class="mb-0"> Descrição do pedido </label>
+                        <textarea type="text" placeholder="Manda um feliz aniversário pro meu brother Kenzzo Lui de Feira de Santana - BA" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="mb-0"> Quanto é 1+1? :P </label>
+                        <input type="text" placeholder="2" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="chekcbox1" checked="">
+                        <label for="chekcbox1"><span class="checkbox-icon"></span> Eu concordo com os <a href={% url 'terms' %} target="_blank" class="uk-text-bold uk-text-small uk-link-reset"> Termos e Condições </a>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="chekcbox2" checked="">
+                        <label for="chekcbox2"><span class="checkbox-icon"></span> Permitir que a FanPlace poste o vídeo!
+                        </label>
+                    </div>
+                    <div>
+                       <a  href={% url 'payment' 1 %}> <button type="button" class="bg-blue-600 font-semibold p-2 mt-5 rounded-md text-center text-white w-full">
+                            Pagamento</button></a>
+                    </div>
+                </form>
+
+
+            </div>
+
+{% include 'footer.html' %}
+</div>
+{% endblock %}

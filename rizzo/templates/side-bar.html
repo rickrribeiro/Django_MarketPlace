@@ -1,0 +1,65 @@
+{% load static %}
+{% block content %}
+
+<div class="sidebar">
+    <div class="sidebar_header"> 
+      FanPlace
+        {% comment %} <img src="{% static 'images/logo.png' %}" alt="">
+        <img src="{% static 'images/logo-icon.png' %}" class="logo-icon" alt=""> {% endcomment %}
+
+        <span class="btn-mobile" uk-toggle="target: #wrapper ; cls: is-collapse is-active"></span>
+
+    </div>
+
+    <div class="sidebar_inner" data-simplebar>
+        <h3 class="text-lg mt-3 font-semibold ml-2 is-title"> Categorias Destaque </h3>
+        <ul>
+            {% for category in categories_spotlight %}
+                {% if forloop.counter < 7 %}
+                    <li><a href="/categoria/{{category.name}}"> 
+                    <div class="contact-avatar">
+                        <img src="{{category.icon.thumb.url}}" alt="">
+                    </div>
+                    <span> &nbsp; {{category.name}} ({{category.total}})</span> </a> 
+                </li>
+            {% endif %}
+            {% endfor %}
+                
+        </ul>
+
+
+
+       
+{% comment %} 
+        <hr>
+
+        
+        <h3 class="text-lg mt-3 font-semibold ml-2 is-title"> Top Doadores - {% now "F" %} {% now "Y" %} </h3>
+            
+        <div class="contact-list mt-2 ml-1">
+            {% for key, value in top_donators.items %}
+            <a href="/idolo/{{value.username}}">
+           
+                <div class="contact-avatar">
+                    <img src="{{ value.image.thumb.url }}" alt="">
+                    
+                </div>
+                <div class="contact-username"> {{value.name}} - R$ {{value.total_donate}} </div>
+            </a>
+            {% endfor %}
+            
+
+
+        </div>
+        <a href="" class='text-lg mt-3 font-semibold ml-2 is-title'>Ver meses anteriores</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br> {% endcomment %}
+
+    </div>
+
+</div> 
+
+{% endblock %}

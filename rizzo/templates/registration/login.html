@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'navbar.html' %}
+<body>
+	<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+<div class="main_content">
+<div class="mcontainer">
+<div class="flex justify-between relative md:mb-4 mb-3">
+	
+	
+
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+			<form class="login100-form validate-form form-signin" method="post" autocomplete="off">
+			{% csrf_token %}
+				<span class="login100-form-title p-b-37">
+					Seja Bem Vindo!
+				</span>
+
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Email não encontrado!">
+					<input type="email" id="username" name="username" class="form-control" placeholder="Informe seu e-mail" required autofocus>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-25" data-validate = "Senha inválida!">
+					<input type="password" id="password" name="password" class="form-control" placeholder="Informe sua senha" required>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn" type="submit">
+						Entrar
+					</button>
+				</div>
+
+				<div class="text-center p-t-57 p-b-20">
+					<span class="txt1">
+						Ou faça login com
+					</span>
+				</div>
+
+				<div class="flex-c p-b-20">
+					<a href="#" class="login100-social-item">
+						<i class="fa fa-facebook-f"></i>
+					</a>
+
+					<a href="#" class="login100-social-item">
+						<img src=" {% static 'forms/images/icons/icon-google.png' %}" alt="GOOGLE">
+					</a>
+				</div>
+
+				<div class="text-center">
+				
+					<a href="/cadastro" class="txt2 hov1">
+						 Não tem uma conta? Cadastre-se!
+					</a>
+				</div>
+				<div class="text-center">
+					<a href="/recuperar" class="txt2 hov1">
+						Esqueceu seu email ou senha?
+					</a>
+				</div>
+				<div class="text-center">
+					<a href="/" class="txt2 hov1">
+						Voltar Para o Site
+					</a>
+				</div>
+			</form>
+
+			
+		</div>
+	</div>
+	
+	
+
+	<div id="dropDownSelect1"></div>
+	
+
+</div></div></div>
+</body>
+{% include 'footer.html' %}
+{% endblock %}

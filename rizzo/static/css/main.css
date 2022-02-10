@@ -1,0 +1,372 @@
+.page-title{
+    font-size: 2em;
+    font-weight: bolder;
+
+}
+.page-second-title{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.footer-text{
+    color:#fff;
+}
+
+.multiple-lines-famous{
+    margin-top: 50px;
+}
+
+
+
+.profile-border{
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    margin-left: 50px;
+    border-radius: 100%;
+    height: 140px;
+    width: 140px;
+    position:relative;
+}
+
+
+.profile-photo{
+    height: 130px;
+    width: 130px;
+    position:absolute;
+    top: 50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+    border-radius: 100%;
+    
+}
+
+.famous-page-main{
+    margin-top: 25px;
+}
+.product-btn{
+    background-color:rgba(255,3,124,1.00);
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.famous-description{
+    margin-top:0px;
+}
+
+@-webkit-keyframes floatTextLeftToRight{
+    from {
+      left: -90%;
+    }
+  
+    to {
+      /* left: auto; */
+      left: 14%;
+    }
+  }
+
+  @-webkit-keyframes floatTextTopToBotton{
+    from {
+      top: 10%;
+    }
+  
+    to {
+      /* left: auto; */
+      top: 35%;
+    }
+  }
+
+.title-cover{
+    position: absolute;
+    top: 35%;
+    left: 14%;
+    color:white;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: floatTextTopToBotton 1s alternate ease-in-out;
+}
+
+.text-cover{
+    position: absolute;
+    top: 45%;
+    left: 14%;
+    color:white;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: floatTextLeftToRight 1s alternate ease-in-out;
+}
+
+.main_content_index {
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+.footer{
+  z-index: 99999;
+  position: relative
+}
+
+.register-div{
+  background: rgba(93,84,240,0.5);
+  background: -webkit-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
+  background: -o-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
+  background: -moz-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
+  background: linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
+  
+}
+
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+#donation-container{
+  background-color: #cacacae8;
+}
+
+.btn-video-famous{
+  top: 40%;
+  background-color: cornsilk;
+}
+
+#videos-container{
+  margin-bottom: 10%;
+}
+
+.famous-video{
+  border-width: 1px;
+  border-color: black;
+  
+  height: 40%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+
+/********* EXTERNOS **********/
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    
+  }
+  
+  /* Display list items side by side */
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+  
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: ">";
+  }
+  
+  /* Add a color to all links inside the list */
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+  
+  /* Add a color on mouse-over */
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+
+ /* ***************  PAYMENT PAGE ****************** */
+ 
+#border-btm {
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+  box-shadow: 0px 35px 2px -35px lightgray
+}
+
+#test {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  border: 1px solid #FFE082;
+  border-radius: 0.25rem;
+  width: 60px;
+  height: 30px;
+  background-color: #FFECB3
+}
+
+.active1 {
+  color: #00C853 !important;
+  font-weight: bold
+}
+
+.bar4 {
+  width: 35px;
+  height: 5px;
+  background-color: #ffffff;
+  margin: 6px 0
+}
+
+.list-group .tabs {
+  color: #000000
+}
+
+#menu-toggle {
+  height: 50px
+}
+
+#new-label {
+  padding: 2px;
+  font-size: 10px;
+  font-weight: bold;
+  background-color: red;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-left: 5px
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0
+}
+
+.list-group-item.active {
+  z-index: 2;
+  color: #fff;
+  background-color: #fff !important;
+  border-color: #fff !important
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+      margin-left: 0
+  }
+
+  #page-content-wrapper {
+      min-width: 0;
+      width: 100%
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+      display: none
+  }
+}
+
+.card0 {
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+.top-highlight {
+  color: #00C853;
+  font-weight: bold;
+  font-size: 20px
+}
+
+.form-card input,
+.form-card textarea {
+  padding: 10px 15px 5px 15px;
+  border: none;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: arial;
+  color: #2C3E50;
+  font-size: 14px;
+  letter-spacing: 1px
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  -moz-box-shadow: 0px 0px 0px 1.5px skyblue !important;
+  -webkit-box-shadow: 0px 0px 0px 1.5px skyblue !important;
+  box-shadow: 0px 0px 0px 1.5px skyblue !important;
+  font-weight: bold;
+  border: 1px solid skyblue;
+  outline-width: 0
+}
+
+input.btn-success {
+  height: 50px;
+  color: #ffffff;
+  opacity: 0.9
+}
+
+#below-btn a {
+  font-weight: bold;
+  color: #000000
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+  overflow: hidden
+}
+
+.input-group input {
+  position: relative;
+  height: 90px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 6px;
+  padding-top: 30px;
+  padding-left: 25px
+}
+
+.input-group label {
+  position: absolute;
+  height: 24px;
+  background: none;
+  border-radius: 6px;
+  line-height: 48px;
+  font-size: 15px;
+  color: gray;
+  width: 100%;
+  font-weight: 100;
+  padding-left: 25px
+}
+
+input:focus+label {
+  color: #1E88E5
+}
+
+#qr {
+  margin-bottom: 150px;
+  margin-top: 50px
+}

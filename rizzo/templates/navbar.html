@@ -1,0 +1,169 @@
+{% load static %}
+{% block content %}
+<header>
+
+            <div class="header_wrap">
+                <div class="header_inner mcontainer">
+                    <div class="left_side">
+                        
+                        <span class="slide_menu" uk-toggle="target: #wrapper ; cls: is-collapse is-active">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z" fill="currentColor"></path></svg>
+                        </span>
+
+                        <div id="logo">
+                            <a href="/"> 
+                                FanPlace
+                                {% comment %} <img src="{% static 'images/logo.png' %}" alt="">
+                                <img src="{% static 'images/logo-mobile.png' %}" class="logo_mobile" alt=""> {% endcomment %}
+                            </a>
+                        </div>
+                    </div>
+                     
+                    <!-- search icon for mobile -->
+                    <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
+                    <div class="header_search">
+                        <input value="" type="text" class="form-control search-bar-top" placeholder="Busque pelo seu ídolo" autocomplete="off">
+                        <i class="uil-search-alt"></i>
+                    </div>
+                     <div uk-drop="mode: click" class="hidden md:w-1/3 w-11/12 shadow-lg rounded-md -mt-2 bg-white">
+                        <div class="-mt-2 p-3">
+                            <h4 class="font-semibold mb-1 mt-2 px-2.5 text-lg"> Destaques  </h4>
+                            <ul class="searchRecommendations">
+                             {% for key, value in top_donators.items %}
+                                {% comment %} Mostra apenas os 4 primeiros  {% endcomment %}
+                                    {% if forloop.counter < 4 %}
+                                        <li>
+                                            <a href="/idolo/{{value.username}}" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-md"> 
+                                                <img src="{{ value.image.thumb.url }}" alt="" class="border mr-3 rounded-full shadow-sm w-8">
+                                            {{value.name}}
+                                            </a>
+                                        </li>
+                                     {% endif %}
+
+                                
+                            {% endfor %}
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right_side">
+    
+                        <div class="header_widgets">
+                            
+                            {% comment %} <a href="#" class="is_link">  Sobre Nós  </a>   {% endcomment %}
+                            <a href="/ongs" class="is_link">  Ongs Parceiras  </a>  
+                            <a href="/cadastro/famoso" class="is_link">  Seja Nosso Parceiro  </a> 
+                            
+                            {% if not user.is_anonymous %}
+                                
+                                <a href="#" class="is_icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                    </svg>
+                                    <span>3</span>
+                                </a>
+                                <div uk-drop="mode: click" class="header_dropdown">
+                                    <div  class="dropdown_scrollbar" data-simplebar>
+                                        <div class="drop_headline">
+                                            <h4>Novidades</h4>
+                                            <div class="btn_action">
+                                                <a href="#">
+                                                    <i class="icon-feather-settings" uk-tooltip="title: Notifications settings ; pos: left" title="" aria-expanded="false"></i>
+                                                </a>
+                                                <a href="#">
+                                                    <i class="icon-feather-settings" uk-tooltip="title: Notifications settings ; pos: left" title="" aria-expanded="false"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="drop_avatar"> 
+                                                        <img src="{% static 'images/avatars/avatar-9.jpg' %}" alt="">
+                                                    </div>
+                                                    <span class="drop_icon bg-gradient-primary">
+                                                        <i class="icon-feather-thumbs-up"></i>
+                                                    </span>
+                                                    <div class="drop_text">
+                                                        <p>
+                                                            <strong>Ricardo</strong> Enviou Seu Video.
+                                                            <span class="text-link">Veja Agora! </span>
+                                                        </p>
+                                                        <time> 2 hours ago </time>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="not-read">
+                                                <a href="#">
+                                                    <div class="drop_avatar status-online"> <img src="{% static 'images/avatars/avatar-9.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="drop_text">
+                                                        <p>
+                                                            <strong>Kenzo</strong> Aceitou Seu Convite Para Uma Ligação
+                                                            <span class="text-link">Link do Zoom</span>
+                                                        </p>
+                                                        <time> 9 hours ago </time>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul> 
+                                    </div>
+                                </div> 
+
+                            
+            
+                                <a href="#">
+                                    <img src="{{user.image.thumb.url}}" class="is_avatar" alt="">
+                                </a>
+                                <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
+
+                                    <a href="timeline.html" class="user">
+                                        <div class="user_avatar">
+                                            <img src="{{user.image.thumb.url}}" alt="">
+                                        </div>
+                                        <div class="user_name">
+                                            <div> {{user.name}} {{user.last_name}} </div>
+                                            
+                                        </div>
+                                    </a>
+                                    <hr class="border-gray-100">
+                                    <a href="page-setting.html">
+                                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
+                                        Minha Conta 
+                                    </a>
+                                    
+                                    <a href="group-feed.html">
+                                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path></svg>
+                                        Compras 
+                                    </a>
+                                    {% if user.is_famous%}
+                                        <a href="/admin">
+                                            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path></svg>
+                                            Admin 
+                                        </a>
+                                    {% endif %}
+                                    <a href="{% url 'logout' %}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                        </svg>
+                                        Log Out 
+                                    </a>
+
+                                    
+                                </div>
+                            {% else %}
+                            <a href="{% url 'login' %}"  class="btn-login"> Login </a>
+                            {% endif %}
+                        </div>
+                        
+                    </div>
+                   
+    
+                    
+                </div>
+            </div>
+        </header>
+
+{% endblock %}
